@@ -89,6 +89,8 @@ export async function GET(req: Request) {
       },
     );
 
+    console.log('new-tools-launch-reminder-email: Campaign scheduled successfully');
+
     return NextResponse.json({ success: true });
     // return new NextResponse(html, {
     //   status: 200,

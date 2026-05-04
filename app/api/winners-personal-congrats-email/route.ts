@@ -48,6 +48,8 @@ export async function GET(req: Request) {
       });
     });
 
+    console.log('winners-personal-congrats-email: Campaign scheduled successfully');
+
     return NextResponse.json({
       success: true,
     });

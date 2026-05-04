@@ -71,6 +71,8 @@ export async function GET(req: Request) {
       },
     );
 
+    console.log('top-3-winners-email: Campaign scheduled successfully');
+
     return NextResponse.json({
       success: true,
     });
