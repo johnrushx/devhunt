@@ -55,6 +55,7 @@ export async function GET(req: Request) {
         topicName: 'DevHunt',
         sender: {
           name: 'DevHunt',
+          domainFrom: 'hey',
           emailFrom: 'hey@devhunt.org',
           from: 'hey@devhunt.org',
           replyTo: 'hey@devhunt.org',
