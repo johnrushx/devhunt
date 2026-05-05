@@ -1550,7 +1550,7 @@ export default `
                                                             font-weight: normal;
                                                             text-decoration: underline;
                                                           "
-                                                          href="$[LI:UNSUBSCRIBE]$"
+                                                          href="{{unsubscribeLink}}?redirectTo=https://devhunt.org/newsletter/unsubscribe"
                                                           >Unsubscribe</a
                                                         >
                                                       </p></span
