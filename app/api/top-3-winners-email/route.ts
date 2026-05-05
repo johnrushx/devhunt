@@ -14,15 +14,21 @@ export async function GET(req: Request) {
 
     const apiService = new ApiService();
     const today = new Date();
+    const calendarYear = today.getFullYear();
     const currentWeek = await apiService.getWeekNumber(today, 2);
-    const year = today.getFullYear();
+    const weekStartDay = 2;
 
-    const weeks = await apiService.getPrevLaunchWeeks(year, 2, currentWeek, 1);
+    // get_prev_launch_weeks uses week <= _launch_week, so passing currentWeek often
+    // returns this week's tools. Past-week email must cap at the previous launch week.
+    const pastWinnersYear = currentWeek > 1 ? calendarYear : calendarYear - 1;
+    const maxPastWeek = currentWeek > 1 ? currentWeek - 1 : 53;
+
+    const weeks = await apiService.getPrevLaunchWeeks(pastWinnersYear, weekStartDay, maxPastWeek, 1);
     if (!weeks?.length) {
       const html = renderTop3WinnersEmail([]);
       return NextResponse.json({
-        week: currentWeek,
-        year,
+        week: maxPastWeek,
+        year: pastWinnersYear,
         tools: [],
         html,
       });
