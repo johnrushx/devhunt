@@ -730,7 +730,16 @@ export default `
                                                       >
                                                         A launching platform for
                                                         dev tools, built by
-                                                        developers.<br />devhunt.org
+                                                        developers.<br />devhunt.org<br /><br /><a
+                                                          style="
+                                                            color: #94a3b8;
+                                                            font-size: 13px;
+                                                            font-weight: normal;
+                                                            text-decoration: underline;
+                                                          "
+                                                          href="{{unsubscribeLink}}?redirectTo=https://devhunt.org/newsletter/unsubscribe"
+                                                          >Unsubscribe</a
+                                                        >
                                                       </p></span
                                                     >
                                                   </td>
